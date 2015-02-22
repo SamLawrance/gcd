@@ -52,3 +52,6 @@ descriptive_set <- select(full_set, subject, activity,
 # the supplied measurement data.
 grouped_set <- group_by(descriptive_set, subject, activity)
 tidy_set <- summarise_each(grouped_set, funs(mean))
+
+# Write out the data set as a text table.
+write.table(tidy_set, file = "tidy_set.txt", row.names = FALSE)
